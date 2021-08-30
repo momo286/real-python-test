@@ -1,0 +1,19 @@
+<html><head>
+<title>db_create.py</title>
+<meta name="Generator" content="htmlizer/[Twisted, version 18.9.0]" />
+<link rel="alternate" href="db_create.py" type="text/x-python" />
+
+</head>
+<body>
+<pre><span class="py-src-variable">from</span> <span class="py-src-variable">views</span> <span class="py-src-variable">import</span> <span class="py-src-variable">db</span>
+<span class="py-src-variable">from</span> <span class="py-src-variable">models</span> <span class="py-src-variable">import</span> <span class="py-src-variable">Task</span>
+<span class="py-src-variable">from</span> <span class="py-src-variable">datetime</span> <span class="py-src-variable">import</span> <span class="py-src-variable">date</span>
+<span class="py-src-comment"># create the database and the db table</span>
+<span class="py-src-variable">db</span>.<span class="py-src-variable">create_all</span>()
+<span class="py-src-comment"># insert data</span>
+<span class="py-src-variable">db</span>.<span class="py-src-variable">session</span>.<span class="py-src-variable">add</span>(<span class="py-src-variable">Task</span>(<span class="py-src-string">&quot;Finish this tutorial&quot;</span>, <span class="py-src-variable">date</span>(<span class="py-src-number">2016</span>, <span class="py-src-number">9</span>, <span class="py-src-number">22</span>), <span class="py-src-number">10</span>, <span class="py-src-number">1</span>))
+<span class="py-src-variable">db</span>.<span class="py-src-variable">session</span>.<span class="py-src-variable">add</span>(<span class="py-src-variable">Task</span>(<span class="py-src-string">&quot;Finish Real Python&quot;</span>, <span class="py-src-variable">date</span>(<span class="py-src-number">2016</span>, <span class="py-src-number">10</span>, <span class="py-src-number">3</span>), <span class="py-src-number">10</span>, <span class="py-src-number">1</span>))
+<span class="py-src-comment"># commit the changes</span>
+<span class="py-src-variable">db</span>.<span class="py-src-variable">session</span>.<span class="py-src-variable">commit</span>()
+</pre>
+</body>
