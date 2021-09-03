@@ -1,5 +1,6 @@
 from forms import AddTaskForm, RegisterForm, LoginForm
 from functools import wraps
+import datetime
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, flash, redirect, render_template, request, session, url_for,g
 # config
@@ -65,6 +66,8 @@ def new_task():
             form.name.data,
             form.due_date.data,
             form.priority.data,
+            datetime.datetime.utcnow(),
+            '1',
             '1'
             )
             db.session.add(new_task)
